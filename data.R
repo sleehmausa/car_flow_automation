@@ -53,9 +53,7 @@ for (sheet in filtered_sheets) {
   raw_data <- raw_data %>%
     fill(Category, .direction = "down") %>%
     fill(Subcategory, .direction = "down")  # Ensure all subcategories are filled down
-  
-  raw_data <- raw_data %>%
-    slice(-n())  # Remove last row (usually subtotal or extra row)
+
   
   print(paste("First two columns renamed to 'Category' and 'Subcategory', merged values filled for sheet:", sheet))
   print(head(raw_data))  
